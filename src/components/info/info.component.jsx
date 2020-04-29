@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 import Spinner from "../spinner/spinner.component";
 
-import styles from './info.style.css';
+import './info.style.css';
 
 
 const Info = (props) => {
@@ -12,11 +12,13 @@ const Info = (props) => {
 	
 	if (!confirmed) return <Spinner />;
 	
+	const dateUpdate = new Date(lastUpdate).toDateString();
+	
 	return (
-		<div className={ styles.container }>
+		<div className="container">
 			<Grid container spacing={ 3 } justify="center">
 				
-				<Grid item component={ Card }>
+				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card infected">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							Infected
@@ -25,7 +27,7 @@ const Info = (props) => {
 							<CountUp start={ 0 } end={ confirmed.value } duration={ 2.75 } separator="," />
 						</Typography>
 						<Typography color="textSecondary">
-							{ new Date(lastUpdate).toDateString() }
+							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
 							Number of active cases of COVID-19.
@@ -33,7 +35,7 @@ const Info = (props) => {
 					</CardContent>
 				</Grid>
 				
-				<Grid item component={ Card }>
+				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card recovered">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							Recovered
@@ -42,7 +44,7 @@ const Info = (props) => {
 							<CountUp start={ 0 } end={ recovered.value } duration={ 2.75 } separator="," />
 						</Typography>
 						<Typography color="textSecondary">
-							{ new Date(lastUpdate).toDateString() }
+							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
 							Number of recoveries from COVID-19.
@@ -50,7 +52,7 @@ const Info = (props) => {
 					</CardContent>
 				</Grid>
 				
-				<Grid item component={ Card }>
+				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card deaths">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							Deaths
@@ -59,7 +61,7 @@ const Info = (props) => {
 							<CountUp start={ 0 } end={ deaths.value } duration={ 2.75 } separator="," />
 						</Typography>
 						<Typography color="textSecondary">
-							{ new Date(lastUpdate).toDateString() }
+							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
 							Number of deaths caused by COVID-19.
