@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NativeSelect, FormControl } from '@material-ui/core';
 
 import { fetchCountries } from "../../api";
 
@@ -19,8 +20,18 @@ const Countries = () => {
 	console.log(countries)
 	
 	return (
-		<h1>Countries</h1>
-	)
+		<FormControl className="formControl">
+			<NativeSelect defaultValue="">
+				<option value="">Global</option>
+				{ countries.map((country, i) => <option
+					key={ i }
+					value={ country }>
+					{ country }
+				</option>)
+				}
+			</NativeSelect>
+		</FormControl>
+	);
 };
 
 
