@@ -6,6 +6,10 @@ const _apiBase = process.env.REACT_APP_API_ADDRESS;
 export const fetchData = async (country) => {
 	let changeableUrl = _apiBase;
 	
+	if (country) {
+		changeableUrl = `${ _apiBase }/countries/${ country }`;
+	}
+	
 	try {
 		const response = await axios.get(changeableUrl);
 		const { data: { confirmed, recovered, deaths, lastUpdate } } = response;

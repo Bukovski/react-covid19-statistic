@@ -10,6 +10,7 @@ import './app.style.css';
 class App extends React.Component {
 	state = {
 		data: {},
+		country: ''
 	};
 	
 	async componentDidMount() {
@@ -18,13 +19,23 @@ class App extends React.Component {
 		this.setState({ data });
 	}
 	
+	handleCountryChange = async (event) => {
+		const country = event.target.value;
+		const data = await fetchData(country);
+
+		this.setState({
+			data,
+			country
+		});
+	};
+	
 	render() {
 		const { data } = this.state;
 		
 		return (
 			<div className="container">
 				<Info data={ data }/>
-				<Countries />
+				<Countries handleCountryChange={ this.handleCountryChange }/>
 				<Chart />
 			</div>
 		)
