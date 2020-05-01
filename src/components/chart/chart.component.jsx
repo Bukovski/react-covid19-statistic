@@ -67,7 +67,7 @@ const Chart = (props) => {
 	);
 	
 	return (
-		<div className="container">
+		<div className="chart-container">
 			{ country ? barChart : lineChart }
 		</div>
 	);

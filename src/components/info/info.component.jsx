@@ -15,7 +15,7 @@ const Info = (props) => {
 	const dateUpdate = new Date(lastUpdate).toDateString();
 	
 	return (
-		<div className="container">
+		<div className="info-container">
 			<Grid container spacing={ 3 } justify="center">
 				
 				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card infected">
