@@ -4,7 +4,9 @@ import { fetchData } from "../../api";
 
 import { Info, Chart, Countries } from '../../components';
 
+import logo from "../../assets/logo.png";
 import './app.style.css';
+
 
 
 class App extends React.Component {
@@ -34,6 +36,8 @@ class App extends React.Component {
 		
 		return (
 			<div className="container">
+				<img className="image" src={ logo } alt="COVID-19" />
+				
 				<Info data={ data }/>
 				<Countries handleCountryChange={ this.handleCountryChange }/>
 				<Chart data={ data } country={ country } />
