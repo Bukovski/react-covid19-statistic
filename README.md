@@ -35,6 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2) - React wrapper for Chart.js
 * [react-countup](https://github.com/glennreyes/react-countup) - quickly create animations that display numerical data
 * [gh-pages](https://pages.github.com/) - create a new repository with a live page on GitHub
+* [icons8.com](https://icons8.com/cssload/) - spinner for data loader
 
 ![global-schedule](./screenshots/1.global-schedule.jpg)
 

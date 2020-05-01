@@ -3,6 +3,8 @@ import { NativeSelect, FormControl } from '@material-ui/core';
 
 import { fetchCountries } from "../../api";
 
+import Spinner from "../spinner/spinner.component";
+
 import './countries.style.css';
 
 
@@ -16,6 +18,8 @@ const Countries = ({ handleCountryChange }) => {
 		
 		fetchAPI();
 	}, []);
+	
+	if (!countries[ 0 ]) return <Spinner />;
 	
 	return (
 		<FormControl className="formControl">
