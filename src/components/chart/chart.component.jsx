@@ -39,8 +39,27 @@ const Chart = (props) => {
 							borderColor: 'red',
 							backgroundColor: 'rgba(255,0,0,0.5)',
 							fill: true,
+						},
+					],
+				}}
+				options={{
+					legend: {
+						labels: {
+							fontColor: '#000'
 						}
-					]
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								fontColor: "#000"
+							}
+						}],
+						xAxes: [{
+							ticks: {
+								fontColor: "#000"
+							}
+						}]
+					}
 				}}
 			/>)
 			: null
@@ -53,7 +72,7 @@ const Chart = (props) => {
 					labels: [ i18next.t('info-title_infected'), i18next.t('info-title_recovered'), i18next.t('info-title_deaths') ],
 					datasets: [
 						{
-							label: 'People',
+							label: i18next.t('chart-label'),
 							backgroundColor: [ 'rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)' ],
 							data: [ confirmed.value, recovered.value, deaths.value ],
 						}
@@ -61,7 +80,24 @@ const Chart = (props) => {
 				}}
 				options={{
 					legend: { display: false },
-					title: { display: true, text: i18next.t('chart-state', { country }), },
+					title: {
+						display: true,
+						text: i18next.t('chart-state', { country }),
+						fontColor: "#000",
+						fontSize: 14
+					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								fontColor: "#000"
+							}
+						}],
+						xAxes: [{
+							ticks: {
+								fontColor: "#000"
+							}
+						}]
+					}
 				}}
 			/>)
 			: null

@@ -12,8 +12,10 @@
       "info-number_deaths": "Number of deaths caused by COVID-19.",
 
       "chart-state": "Current state in {{ country }}",
+      "chart-label": "People",
 
-      "settings-language": "Изменить язык"
+      "settings-language": "Change Language",
+      "settings-theme": "Change color"
     }
   }
 }

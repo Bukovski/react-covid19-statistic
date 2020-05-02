@@ -1,5 +1,24 @@
+/*default theme(light)*/
+html {
+  --primaryBackground: #FAFAFA;
+  --primaryTextColor: #000000;
+  --primaryCanvasBackgroundcolor: #FAFAFA;
+}
+
+/*dark theme*/
+html[data-theme="dark"] {
+  --primaryBackground: #778899;
+  --primaryTextColor: #FAFAFA;
+  --primaryCanvasBackgroundcolor: #becfe0;
+}
+
 body {
-  background-color: rgb(250, 250,250);
+  background-color: var(--primaryBackground);
+  color: var(--primaryTextColor);
+}
+
+canvas {
+  background-color: var(--primaryCanvasBackgroundcolor);
 }
 
 .container {

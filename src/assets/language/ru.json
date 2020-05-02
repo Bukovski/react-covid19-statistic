@@ -12,8 +12,10 @@
       "info-number_deaths": "Количество смертей, вызванных COVID-19.",
 
       "chart-state": "Текущее состояние в {{ country }}",
+      "chart-label": "Людей",
 
-      "settings-language": "Change Language"
+      "settings-language": "Изменить язык",
+      "settings-theme": "Изменить цвет"
     }
   }
 }

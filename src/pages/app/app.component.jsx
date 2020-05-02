@@ -14,7 +14,8 @@ class App extends React.Component {
 	state = {
 		data: {},
 		country: '',
-		language: 'en'
+		language: '',
+		theme: 'light'
 	};
 	
 	async componentDidMount() {
@@ -50,12 +51,29 @@ class App extends React.Component {
 		this.setLanguage(language);
 	};
 	
+	handleThemeChange = (event) => {
+		const theme = event.target.value;
+		
+		if (theme === "light") {
+			document.documentElement.setAttribute('data-theme', 'light');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'dark');
+		}
+		
+		this.setState({ theme });
+	};
+	
 	render() {
-		const { data, country, language } = this.state;
+		const { data, country, language, theme } = this.state;
 		
 		return (
 			<div className="container">
-				<Settings language={ language } handleLanguageChange={ this.handleLanguageChange }/>
+				<Settings
+					language={ language }
+					theme={ theme }
+					handleLanguageChange={ this.handleLanguageChange }
+					handleThemeChange={ this.handleThemeChange }
+				/>
 				<img className="image" src={ logo } alt="COVID-19" />
 				
 				<Info data={ data }/>

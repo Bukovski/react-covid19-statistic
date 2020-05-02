@@ -1,3 +1,8 @@
 .settings-language {
   width: 110px;
+  margin: 0 5px !important;
+}
+
+.settings-text {
+  color: var(--primaryTextColor) !important;
 }
