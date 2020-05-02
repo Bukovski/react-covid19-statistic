@@ -1,0 +1,19 @@
+{
+  "en": {
+    "translation": {
+      "language": "en",
+
+      "info-title_infected": "Infected",
+      "info-title_recovered": "Recovered",
+      "info-title_deaths": "Deaths",
+
+      "info-number_active": "Number of active cases of COVID-19.",
+      "info-number_recoveries": "Number of recoveries from COVID-19.",
+      "info-number_deaths": "Number of deaths caused by COVID-19.",
+
+      "chart-state": "Current state in {{ country }}",
+
+      "settings-language": "Изменить язык"
+    }
+  }
+}

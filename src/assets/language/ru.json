@@ -1,0 +1,19 @@
+{
+  "ru": {
+    "translation": {
+      "language" : "ru",
+
+      "info-title_infected": "Инфицировано",
+      "info-title_recovered": "Выздоровело",
+      "info-title_deaths": "Умерло",
+
+      "info-number_active": "Количество активных случаев COVID-19.",
+      "info-number_recoveries": "Количество выздоровевших от COVID-19.",
+      "info-number_deaths": "Количество смертей, вызванных COVID-19.",
+
+      "chart-state": "Текущее состояние в {{ country }}",
+
+      "settings-language": "Change Language"
+    }
+  }
+}

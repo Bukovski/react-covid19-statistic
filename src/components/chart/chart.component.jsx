@@ -4,6 +4,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import { fetchDailyData } from "../../api";
 
 import './chart.style.css';
+import i18next from "i18next";
 
 
 const Chart = (props) => {
@@ -28,13 +29,13 @@ const Chart = (props) => {
 					datasets: [
 						{
 							data: dailyData.map((data) => data.confirmed),
-							label: 'Infected',
+							label: i18next.t('info-title_infected'),
 							borderColor: '#3333ff',
 							fill: true,
 						},
 						{
 							data: dailyData.map((data) => data.deaths),
-							label: 'Deaths',
+							label: i18next.t('info-title_deaths'),
 							borderColor: 'red',
 							backgroundColor: 'rgba(255,0,0,0.5)',
 							fill: true,
@@ -49,7 +50,7 @@ const Chart = (props) => {
 		confirmed
 			? (<Bar
 				data={{
-					labels: [ 'Infected', 'Recovered', 'Deaths' ],
+					labels: [ i18next.t('info-title_infected'), i18next.t('info-title_recovered'), i18next.t('info-title_deaths') ],
 					datasets: [
 						{
 							label: 'People',
@@ -60,7 +61,7 @@ const Chart = (props) => {
 				}}
 				options={{
 					legend: { display: false },
-					title: { display: true, text: `Current state in ${ country }` },
+					title: { display: true, text: i18next.t('chart-state', { country }), },
 				}}
 			/>)
 			: null

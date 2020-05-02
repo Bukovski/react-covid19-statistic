@@ -1,5 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import i18next from 'i18next';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 import Spinner from "../spinner/spinner.component";
@@ -12,7 +13,11 @@ const Info = (props) => {
 	
 	if (!confirmed) return <Spinner />;
 	
-	const dateUpdate = new Date(lastUpdate).toDateString();
+	const dateUpdate = new Date(lastUpdate).toLocaleString(i18next.t('language'), {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	});
 	
 	return (
 		<div className="info-container">
@@ -21,7 +26,7 @@ const Info = (props) => {
 				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card infected">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							Infected
+							{ i18next.t('info-title_infected') }
 						</Typography>
 						<Typography variant="h5" component="h2">
 							<CountUp start={ 0 } end={ confirmed.value } duration={ 2.75 } separator="," />
@@ -30,7 +35,7 @@ const Info = (props) => {
 							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
-							Number of active cases of COVID-19.
+							{ i18next.t('info-number_active') }
 						</Typography>
 					</CardContent>
 				</Grid>
@@ -38,7 +43,7 @@ const Info = (props) => {
 				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card recovered">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							Recovered
+							{ i18next.t('info-title_recovered') }
 						</Typography>
 						<Typography variant="h5" component="h2">
 							<CountUp start={ 0 } end={ recovered.value } duration={ 2.75 } separator="," />
@@ -47,7 +52,7 @@ const Info = (props) => {
 							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
-							Number of recoveries from COVID-19.
+							{ i18next.t('info-number_recoveries') }
 						</Typography>
 					</CardContent>
 				</Grid>
@@ -55,7 +60,7 @@ const Info = (props) => {
 				<Grid item component={ Card } xs={ 12 } md={ 3 } className="card deaths">
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							Deaths
+							{ i18next.t('info-title_deaths') }
 						</Typography>
 						<Typography variant="h5" component="h2">
 							<CountUp start={ 0 } end={ deaths.value } duration={ 2.75 } separator="," />
@@ -64,7 +69,7 @@ const Info = (props) => {
 							{ dateUpdate }
 						</Typography>
 						<Typography variant="body2" component="p">
-							Number of deaths caused by COVID-19.
+							{ i18next.t('info-number_deaths') }
 						</Typography>
 					</CardContent>
 				</Grid>

@@ -36,6 +36,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [react-countup](https://github.com/glennreyes/react-countup) - quickly create animations that display numerical data
 * [gh-pages](https://pages.github.com/) - create a new repository with a live page on GitHub
 * [icons8.com](https://icons8.com/cssload/) - spinner for data loader
+* [kapwing.com/404](https://www.kapwing.com/404-illustrations?ref=producthunt) - error page example
+* [i18next](https://www.i18next.com/) - internationalization
 
 ![global-schedule](./screenshots/1.global-schedule.jpg)
 
