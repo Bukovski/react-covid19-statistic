@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import i18next from 'i18next';
 
 import { fetchData } from "../../api";
+import useLocalStorageSetting from "../../hooks/useLocalStorageSetting.container";
 
 import { Info, Chart, Countries, Settings } from '../../components';
 
@@ -10,79 +11,88 @@ import './app.style.css';
 
 
 
-class App extends React.Component {
-	state = {
-		data: {},
-		country: '',
-		language: '',
-		theme: 'light'
-	};
+const App = () => {
+	const [ data, setData ] = useState({});
+	const [ country, setCountry ] = useState('');
+	const [ language, setLanguage ] = useState('');
+	const [ theme, setTheme ] = useState('');
 	
-	async componentDidMount() {
-		const data = await fetchData();
-		
-		this.setState({ data });
-		
-		this.setLanguage('ru');
-	}
+	const [ localSetting, setLocalSetting ] = useLocalStorageSetting({});
 	
-	setLanguage(language) {
+	
+	useEffect(() => {
+		const fetchAPI = async () => {
+			const dataFetch = await fetchData();
+			
+			setData(dataFetch);
+		};
+		
+		fetchAPI();
+		
+		languageToggle(localSetting.language);
+		themeToggle(localSetting.theme);
+	}, []);
+	
+	
+	const languageToggle = (language) => {
 		i18next.init({
 			lng: language,
 			resources: require(`../../assets/language/${language}.json`)
 		});
 		
-		this.setState({ language: i18next.language });
-	}
-	
-	handleCountryChange = async (event) => {
-		const country = event.target.value;
-		const data = await fetchData(country);
-
-		this.setState({
-			data,
-			country
-		});
+		setLanguage(i18next.language);
 	};
 	
-	handleLanguageChange = (event) => {
-		const language = event.target.value;
-		
-		this.setLanguage(language);
-	};
-	
-	handleThemeChange = (event) => {
-		const theme = event.target.value;
-		
+	const themeToggle = (theme) => {
 		if (theme === "light") {
 			document.documentElement.setAttribute('data-theme', 'light');
 		} else {
 			document.documentElement.setAttribute('data-theme', 'dark');
 		}
 		
-		this.setState({ theme });
+		setTheme(theme);
 	};
 	
-	render() {
-		const { data, country, language, theme } = this.state;
+	const handleCountryChange = async (event) => {
+		const country = event.target.value;
+		const data = await fetchData(country);
 		
-		return (
-			<div className="container">
-				<Settings
-					language={ language }
-					theme={ theme }
-					handleLanguageChange={ this.handleLanguageChange }
-					handleThemeChange={ this.handleThemeChange }
-				/>
-				<img className="image" src={ logo } alt="COVID-19" />
-				
-				<Info data={ data }/>
-				<Countries handleCountryChange={ this.handleCountryChange }/>
-				<Chart data={ data } country={ country } />
-			</div>
-		)
-	}
-}
+		setData(data);
+		setCountry(country);
+	};
+	
+	const handleLanguageChange = (event) => {
+		const language = event.target.value;
+		
+		setLocalSetting({ language: language });
+		
+		languageToggle(language);
+	};
+	
+	const handleThemeChange = (event) => {
+		const theme = event.target.value;
+		
+		setLocalSetting({ theme: theme });
+		
+		themeToggle(theme);
+	};
+	
+	return (
+		<div className="container">
+			<Settings
+				language={ language }
+				theme={ theme }
+				handleLanguageChange={ handleLanguageChange }
+				handleThemeChange={ handleThemeChange }
+			/>
+			<img className="image" src={ logo } alt="COVID-19" />
+			
+			<Info data={ data }/>
+			<Countries handleCountryChange={ handleCountryChange }/>
+			<Chart data={ data } country={ country } />
+		</div>
+	)
+};
 
 
 export default App;
