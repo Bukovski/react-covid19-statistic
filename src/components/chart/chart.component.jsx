@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 import { fetchDailyData } from "../../api";
 
@@ -108,6 +109,16 @@ const Chart = (props) => {
 			{ country ? barChart : lineChart }
 		</div>
 	);
+};
+
+
+Chart.propTypes = {
+	data: PropTypes.shape({
+		confirmed: PropTypes.object,
+		recovered: PropTypes.object,
+		deaths: PropTypes.object
+	}),
+	country: PropTypes.string
 };
 
 

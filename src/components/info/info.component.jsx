@@ -1,6 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import i18next from 'i18next';
+import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 import Spinner from "../spinner/spinner.component";
@@ -77,6 +78,16 @@ const Info = (props) => {
 			</Grid>
 		</div>
 	)
+};
+
+
+Info.propTypes = {
+	data: PropTypes.shape({
+		confirmed: PropTypes.object,
+		recovered: PropTypes.object,
+		deaths: PropTypes.object,
+		lastUpdate: PropTypes.string,
+	})
 };
 
 
