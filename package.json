@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "private": false,
   "homepage": "https://bukovski.github.io/react-covid19-statistic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bukovski/react-covid19-statistic.git"
+  },
+  "keywords": [
+    "react hoc",
+    "react api",
+    "react loader",
+    "react error page",
+    "react 404 page",
+    "react error boundary",
+    "react schedule",
+    "react internationalization i18next",
+    "react dynamic change style",
+    "react gh-pages example"
+  ],
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@testing-library/jest-dom": "^4.2.4",
