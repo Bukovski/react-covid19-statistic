@@ -31,6 +31,8 @@ const App = () => {
 		
 		languageToggle(localSetting.language);
 		themeToggle(localSetting.theme);
+		
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	
 	

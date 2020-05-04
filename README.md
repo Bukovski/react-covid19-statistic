@@ -3,6 +3,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project is made on React. Displays disease statistics from COVID-19 in graphs. There is a change of languages ​​to ru / en and a change in the theme of design to light and dark. Settings are saved in localStorage
 
 ### Install
 
@@ -17,6 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### .env.local
 
 * REACT_APP_API_ADDRESS - address to api with data 
+* REACT_APP_LOCAL_STORAGE_NAME - localStorage name for save settings
  
 
 ### Available Scripts
@@ -39,8 +41,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [kapwing.com/404](https://www.kapwing.com/404-illustrations?ref=producthunt) - error page example
 * [i18next](https://www.i18next.com/) - internationalization
 
-![global-schedule](./screenshots/1.global-schedule.jpg)
-
-![russian-schedule](./screenshots/2.russian-schedule.jpg)
+![global-schedule](./screenshots/1.global-schedule-en.jpg)
+![russian-schedule](./screenshots/2.russian-schedule-en.jpg)
+![change-language-ru](./screenshots/3.change-language-ru.jpg)
+![change-theme-ru](./screenshots/4.change-theme-ru.jpg)
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import i18next from 'i18next';
-import { NativeSelect, FormControl, FormHelperText, Typography } from '@material-ui/core';
+import { NativeSelect, FormControl, FormHelperText } from '@material-ui/core';
 
 import './settings.style.css';
 
