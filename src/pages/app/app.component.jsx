@@ -14,8 +14,8 @@ import './app.style.css';
 const App = () => {
 	const [ data, setData ] = useState({});
 	const [ country, setCountry ] = useState('');
-	const [ language, setLanguage ] = useState('');
-	const [ theme, setTheme ] = useState('');
+	const [ language, setLanguage ] = useState('ru');
+	const [ theme, setTheme ] = useState('light');
 	
 	const [ localSetting, setLocalSetting ] = useLocalStorageSetting({});
 	
@@ -45,14 +45,22 @@ const App = () => {
 		setLanguage(i18next.language);
 	};
 	
+	const backgroundSwitcher = () => {
+		const getCssBackgroundVar = window
+			.getComputedStyle(document.documentElement)
+			.getPropertyValue("--primaryBackground");
+		
+		document.body.style.backgroundColor = getCssBackgroundVar;
+	}
+	
 	const themeToggle = (theme) => {
-		if (theme === "light") {
-			document.documentElement.setAttribute('data-theme', 'light');
-		} else {
-			document.documentElement.setAttribute('data-theme', 'dark');
-		}
+		const setThemeVar = (theme === "light") ? 'light' : 'dark';
+		
+		document.documentElement.setAttribute('data-theme', setThemeVar);
 		
 		setTheme(theme);
+		
+		backgroundSwitcher();
 	};
 	
 	const handleCountryChange = async (event) => {

@@ -1,12 +1,12 @@
 /*default theme(light)*/
 html {
   --primaryBackground: #FAFAFA;
-  --primaryTextColor: #000000;
+  --primaryTextColor: #000;
   --primaryCanvasBackgroundcolor: #FAFAFA;
 }
 
 /*dark theme*/
-html[data-theme="dark"] {
+html[ data-theme="dark" ] {
   --primaryBackground: #778899;
   --primaryTextColor: #FAFAFA;
   --primaryCanvasBackgroundcolor: #becfe0;
