@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './pages/app/app.component';
+import './main.style.css'
+
+import App from './pages/app.page';
 import { ErrorBoundary } from "./components";
 
 
