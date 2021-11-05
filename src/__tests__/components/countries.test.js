@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import { queryByText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Countries } from "../../components";
 import { mockCountry } from "../../__mocks__/axios-statistic.mock";

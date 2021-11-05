@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Info render page with props 1`] = `
+<div
+  class="info-container"
+>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root MuiGrid-root card infected MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+        />
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          <span>
+            0
+          </span>
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          3 ноября 2021 г.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root MuiGrid-root card recovered MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+        />
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          <span>
+            0
+          </span>
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          3 ноября 2021 г.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2"
+        />
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root MuiGrid-root card deaths MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+        />
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          <span>
+            0
+          </span>
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          3 ноября 2021 г.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body2"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
