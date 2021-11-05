@@ -1,16 +1,15 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { fetchData } from "../api";
-import { Info, Chart, Countries } from '../components';
+import { fetchStatisticData } from "../api";
+import { Info, Chart, Countries, Spinner } from '../components';
 
 
 const InfoContainer = () => {
 	const [ data, setData ] = useState({});
 	const [ country, setCountry ] = useState('');
 	
-	
 	useEffect(() => {
 		const fetchAPI = async () => {
-			const dataFetch = await fetchData();
+			const dataFetch = await fetchStatisticData();
 			
 			setData(dataFetch);
 		};
@@ -20,11 +19,13 @@ const InfoContainer = () => {
 	
 	const handleCountryChange = async (event) => {
 		const country = event.target.value;
-		const data = await fetchData(country);
+		const data = await fetchStatisticData(country);
 		
 		setData(data);
 		setCountry(country);
 	};
+	
+	if (data && !data.confirmed) return <Spinner />;
 	
 	return (
 		<Fragment>

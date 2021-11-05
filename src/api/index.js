@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const _apiBase = process.env.REACT_APP_API_ADDRESS;
+export const _apiBase = process.env.REACT_APP_API_ADDRESS || "https://covid19.mathdro.id/api";
 
 
-export const fetchData = async (country) => {
+export const fetchStatisticData = async (country) => {
 	let changeableUrl = _apiBase;
 	
 	if (country) {
@@ -13,14 +13,14 @@ export const fetchData = async (country) => {
 	try {
 		const response = await axios.get(changeableUrl);
 		const { data: { confirmed, recovered, deaths, lastUpdate } } = response;
-		
+
 		return { confirmed, recovered, deaths, lastUpdate };
 	} catch (error) {
 		throw new Error(`Could not fetch ${ changeableUrl }`)
 	}
 };
 
-const _transformDailyData = (data) => {
+export const _transformDailyData = (data) => {
 	const { confirmed, deaths, reportDate: date } = data;
 	
 	return {
@@ -35,7 +35,7 @@ export const fetchDailyData = async () => {
 	
 	try {
 		const response = await axios.get(url);
-		
+
 		return response.data.map(_transformDailyData);
 	} catch (error) {
 		throw new Error(`Could not fetch ${ url }`)
@@ -47,7 +47,7 @@ export const fetchCountries = async () => {
 	
 	try {
 		const { data: { countries } } = await axios.get(url);
-		
+
 		return countries.map((country) => country.name);
 	} catch (error) {
 		throw new Error(`Could not fetch ${ url }`)

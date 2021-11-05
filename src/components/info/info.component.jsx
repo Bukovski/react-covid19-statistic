@@ -4,15 +4,11 @@ import i18next from 'i18next';
 import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
-import Spinner from "../spinner/spinner.component";
-
 import './info.style.css';
 
 
 const Info = (props) => {
 	const { data: { confirmed, recovered, deaths, lastUpdate } } = props;
-	
-	if (!confirmed) return <Spinner />;
 	
 	const dateUpdate = new Date(lastUpdate).toLocaleString(i18next.t('language'), {
 		year: 'numeric',

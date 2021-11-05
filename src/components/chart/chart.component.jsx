@@ -20,7 +20,7 @@ const Chart = (props) => {
 		};
 		
 		fetchMyAPI();
-	}, []);
+	}, [ country ]);
 	
 	const lineChart = (
 		dailyData[ 0 ]
