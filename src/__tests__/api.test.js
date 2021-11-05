@@ -7,7 +7,7 @@ import { mockStatistic, mockDaily, mockCountry } from '../__mocks__/axios-statis
 jest.mock("axios");
 
 
-describe.only("Api", () => {
+describe("Api", () => {
 	const errorMessage = `Could not fetch`;
 	
 	describe("fetchStatisticData", () => {
@@ -71,6 +71,14 @@ describe.only("Api", () => {
 			axios.get.mockImplementationOnce(() => Promise.resolve({ data: { countries: mockCountry } }));
 			
 			await expect(fetchCountries()).resolves.toEqual(filterCountryData);
+			
+			expect(axios.get).toHaveBeenCalledWith(`${ _apiBase }/countries`);
+		})
+		
+		it("fetches successfully with empty countries", async () => {
+			axios.get.mockImplementationOnce(() => Promise.resolve({ data: { countries: [] } }));
+			
+			await expect(fetchCountries()).resolves.toEqual([]);
 			
 			expect(axios.get).toHaveBeenCalledWith(`${ _apiBase }/countries`);
 		})
