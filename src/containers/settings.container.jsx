@@ -4,7 +4,7 @@ import { Settings } from "../components";
 import useLocalStorageSetting from "../hooks/useLocalStorageSetting.container";
 
 
-const SettingsContainer = () => {
+const SettingsContainer = ({ onToggleUpdate }) => {
 	const [ language, setLanguage ] = useState('ru');
 	const [ theme, setTheme ] = useState('light');
 	const [ localSetting, setLocalSetting ] = useLocalStorageSetting({});
@@ -33,9 +33,7 @@ const SettingsContainer = () => {
 	}
 	
 	const themeToggle = (theme) => {
-		const setThemeVar = (theme === "light") ? 'light' : 'dark';
-		
-		document.documentElement.setAttribute('data-theme', setThemeVar);
+		document.documentElement.setAttribute('data-theme', theme);
 		
 		setTheme(theme);
 		
@@ -47,7 +45,7 @@ const SettingsContainer = () => {
 		const language = event.target.value;
 		
 		setLocalSetting({ language: language });
-		
+		onToggleUpdate();
 		languageToggle(language);
 	};
 	
@@ -55,16 +53,21 @@ const SettingsContainer = () => {
 		const theme = event.target.value;
 		
 		setLocalSetting({ theme: theme });
-		
+
 		themeToggle(theme);
 	};
 	
-	return (<Settings
-		language={ language }
-		theme={ theme }
-		handleLanguageChange={ handleLanguageChange }
-		handleThemeChange={ handleThemeChange }
-	/>)
+
+	return (<Settings>
+		<Settings.Language
+			language={ language }
+			handleLanguageChange={ handleLanguageChange }
+		/>
+		<Settings.Theme
+			theme={ theme }
+			handleThemeChange={ handleThemeChange }
+		/>
+	</Settings>)
 }
 
 

@@ -6,38 +6,48 @@ import { NativeSelect, FormControl, FormHelperText } from '@material-ui/core';
 import './settings.style.css';
 
 
-const Settings = ({ language, theme, handleLanguageChange, handleThemeChange }) => {
+function Settings ({ children }) {
 	return (
 		<div className="settings-container">
-			<FormControl className="formControl settings-language">
-				
-				<NativeSelect value={ language } onChange={ handleLanguageChange }>
-					<option value="ru">RU</option>
-					<option value="en">EN</option>
-				</NativeSelect>
-				
-				<FormHelperText className="settings-text">{ i18next.t('settings-language') }</FormHelperText>
-			</FormControl>
-			
-			<FormControl className="formControl settings-language">
-				<NativeSelect value={ theme } onChange={ handleThemeChange }>
-					<option value="light">Light</option>
-					<option value="dark">Dark</option>
-				</NativeSelect>
-				
-				<FormHelperText className="settings-text">{ i18next.t('settings-theme') }</FormHelperText>
-			</FormControl>
+			{ children }
 		</div>
 	);
 };
 
+Settings.Language = ({ language, handleLanguageChange }) => (
+	<FormControl className="formControl settings-language">
+		
+		<NativeSelect data-testid="test-language" value={ language } onChange={ handleLanguageChange }>
+			<option value="ru">RU</option>
+			<option value="en">EN</option>
+		</NativeSelect>
+		
+		<FormHelperText className="settings-text">{ i18next.t('settings-language') }</FormHelperText>
+	</FormControl>
+)
+
+Settings.Theme = ({ theme, handleThemeChange }) => (
+	<FormControl className="formControl settings-language">
+		<NativeSelect value={ theme } onChange={ handleThemeChange }>
+			<option value="light">Light</option>
+			<option value="dark">Dark</option>
+		</NativeSelect>
+		
+		<FormHelperText className="settings-text">{ i18next.t('settings-theme') }</FormHelperText>
+	</FormControl>
+)
+
 
 Settings.propTypes = {
-	language: PropTypes.string,
-	theme: PropTypes.string,
-	handleLanguageChange: PropTypes.func.isRequired,
-	handleThemeChange: PropTypes.func.isRequired
+	children: PropTypes.node,
 };
-
+Settings.prototype.Theme = {
+	theme: PropTypes.string,
+	handleThemeChange: PropTypes.func.isRequired
+}
+Settings.prototype.Language = {
+	language: PropTypes.string,
+	handleLanguageChange: PropTypes.func.isRequired,
+}
 
 export default Settings;

@@ -1,13 +1,12 @@
 import React from 'react';
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import { Info } from "../../components";
 import { mockStatistic } from "../../__mocks__/axios-statistic.mock";
-import expect from "expect";
 
 
 
-describe.only("Info", () => {
+describe("Info", () => {
 	it("render page with props", () => {
 		const { container, queryAllByText } = render(<Info data={ mockStatistic }/>);
 		
