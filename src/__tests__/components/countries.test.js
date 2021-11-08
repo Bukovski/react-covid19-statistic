@@ -10,18 +10,31 @@ jest.mock("axios");
 
 
 describe("Countries", () => {
-	beforeEach(() => {
+	beforeAll(() => {
 		axios.get.mockResolvedValue(
 			{ data: { countries: mockCountry }}
 		);
 	})
 	
 	it("change select option", async () => {
-		const { getByRole, getByText } = render(<Countries/>);
+		render(<Countries/>);
 		await screen.findByText(/Global/i);
 		
-		userEvent.selectOptions(getByRole('combobox'), "Afghanistan");
-		expect(getByText("Afghanistan").selected).toBeTruthy();
+		userEvent.selectOptions(screen.getByRole('combobox'), "Afghanistan");
+		expect(screen.getByText("Afghanistan").selected).toBeTruthy();
+	})
+	
+	it("change select option call handleCountryChange function", async () => {
+		const handleChange = jest.fn();
+		
+		render(<Countries handleCountryChange={ handleChange }/>);
+		
+		await screen.findByText(/Global/i);
+		
+		userEvent.selectOptions(screen.getByRole('combobox'), "Afghanistan");
+		expect(screen.getByText("Afghanistan").selected).toBeTruthy();
+		
+		expect(handleChange).toHaveBeenCalledTimes(1);
 	})
 	
 	it("fetchCountries empty selected option don't exist", async () => {
@@ -31,18 +44,5 @@ describe("Countries", () => {
 		await screen.findByText(/Global/i);
 		
 		expect(screen.queryByText("Afghanistan")).toBeNull();
-	})
-	
-	it("change select option call handleCountryChange function", async () => {
-		const handleChange = jest.fn();
-		
-		const { getByRole, getByText } = render(<Countries handleCountryChange={ handleChange }/>);
-		
-		await screen.findByText(/Global/i);
-		
-		userEvent.selectOptions(getByRole('combobox'), "Afghanistan");
-		expect(getByText("Afghanistan").selected).toBeTruthy();
-		
-		expect(handleChange).toHaveBeenCalledTimes(1);
 	})
 });
