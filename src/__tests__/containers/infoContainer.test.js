@@ -19,7 +19,7 @@ axios.get.mockImplementation((url) => {
 		case 'https://covid19.mathdro.id/api/daily':
 			return Promise.resolve({ data: mockDaily })
 		default:
-			return Promise.reject(new Error('not found'))
+			return Promise.reject(new Error('Could not fetch'))
 	}
 })
 

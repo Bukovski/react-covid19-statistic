@@ -40,6 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [icons8.com](https://icons8.com/cssload/) - spinner for data loader
 * [kapwing.com/404](https://www.kapwing.com/404-illustrations?ref=producthunt) - error page example
 * [i18next](https://www.i18next.com/) - internationalization
+* [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) - mock canvas when run unit test cases with jest.
 
 ![global-schedule](./screenshots/1.global-schedule-en.jpg)
 ![russian-schedule](./screenshots/2.russian-schedule-en.jpg)
