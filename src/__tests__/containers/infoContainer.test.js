@@ -32,17 +32,17 @@ describe("InfoContainer", () => {
 		
 		expect(container.getElementsByClassName('spinner-overlay').length).toBeDefined();
 		
-		await act(() => axios.get('https://covid19.mathdro.id/api'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api'));
 		await expect(axios.get).toHaveBeenCalledWith(
 			`https://covid19.mathdro.id/api`,
 		)
 		
-		await act(() => axios.get('https://covid19.mathdro.id/api/countries'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api/countries'));
 		await expect(axios.get).toHaveBeenCalledWith(
 			`https://covid19.mathdro.id/api/countries`,
 		)
 		
-		await act(() => axios.get('https://covid19.mathdro.id/api/daily'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api/daily'));
 		await expect(axios.get).toHaveBeenCalledWith(
 			`https://covid19.mathdro.id/api/daily`,
 		)
@@ -57,9 +57,9 @@ describe("InfoContainer", () => {
 	it("change selected country", async () => {
 		render(<InfoContainer />);
 		
-		await act(() => axios.get('https://covid19.mathdro.id/api'));
-		await act(() => axios.get('https://covid19.mathdro.id/api/countries'));
-		await act(() => axios.get('https://covid19.mathdro.id/api/daily'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api/countries'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api/daily'));
 		
 		await screen.queryAllByText("Global");
 		
@@ -67,7 +67,7 @@ describe("InfoContainer", () => {
 		
 		userEvent.selectOptions(screen.getByRole('combobox'), "Afghanistan");
 		
-		await act(() => axios.get('https://covid19.mathdro.id/api/countries/Afghanistan'));
+		await act(async () => axios.get('https://covid19.mathdro.id/api/countries/Afghanistan'));
 		
 		expect(screen.getByText("Afghanistan").selected).toBeTruthy();
 	})

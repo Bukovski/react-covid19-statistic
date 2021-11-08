@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SettingsContainer change page language 1`] = `
+<div
+  class="settings-container"
+>
+  <div
+    class="MuiFormControl-root formControl settings-language"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      data-testid="test-language"
+    >
+      <select
+        aria-invalid="false"
+        class="MuiNativeSelect-root MuiNativeSelect-select MuiInputBase-input MuiInput-input"
+      >
+        <option
+          value="ru"
+        >
+          RU
+        </option>
+        <option
+          value="en"
+        >
+          EN
+        </option>
+      </select>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiNativeSelect-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <p
+      class="MuiFormHelperText-root settings-text MuiFormHelperText-filled"
+    >
+      Изменить язык
+    </p>
+  </div>
+  <div
+    class="MuiFormControl-root formControl settings-language"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+    >
+      <select
+        aria-invalid="false"
+        class="MuiNativeSelect-root MuiNativeSelect-select MuiInputBase-input MuiInput-input"
+      >
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="dark"
+        >
+          Dark
+        </option>
+      </select>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiNativeSelect-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <p
+      class="MuiFormHelperText-root settings-text MuiFormHelperText-filled"
+    >
+      Изменить цвет
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SettingsContainer change page language 2`] = `
+<div
+  class="settings-container"
+>
+  <div
+    class="MuiFormControl-root formControl settings-language"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-focused Mui-focused MuiInputBase-formControl MuiInput-formControl"
+      data-testid="test-language"
+    >
+      <select
+        aria-invalid="false"
+        class="MuiNativeSelect-root MuiNativeSelect-select MuiInputBase-input MuiInput-input"
+      >
+        <option
+          value="ru"
+        >
+          RU
+        </option>
+        <option
+          value="en"
+        >
+          EN
+        </option>
+      </select>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiNativeSelect-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <p
+      class="MuiFormHelperText-root settings-text MuiFormHelperText-filled Mui-focused"
+    >
+      Change Language
+    </p>
+  </div>
+  <div
+    class="MuiFormControl-root formControl settings-language"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+    >
+      <select
+        aria-invalid="false"
+        class="MuiNativeSelect-root MuiNativeSelect-select MuiInputBase-input MuiInput-input"
+      >
+        <option
+          value="light"
+        >
+          Light
+        </option>
+        <option
+          value="dark"
+        >
+          Dark
+        </option>
+      </select>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiNativeSelect-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <p
+      class="MuiFormHelperText-root settings-text MuiFormHelperText-filled"
+    >
+      Change color
+    </p>
+  </div>
+</div>
+`;
