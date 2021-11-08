@@ -4,7 +4,7 @@ import useLocalStorage from "./useLocalStorage";
 
 
 const _localSettingName = process.env.REACT_APP_LOCAL_STORAGE_NAME;
-const _defaultData = { language: 'ru', theme: 'light' };
+const _defaultData = { language: 'ru', theme: 'light', country: '' };
 
 
 const useLocalStorageSetting = (objValue, setObjValue = {}) => {

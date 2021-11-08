@@ -14,10 +14,13 @@ axios.get.mockImplementation((url) => {
 		case 'https://covid19.mathdro.id/api':
 		case 'https://covid19.mathdro.id/api/countries/Afghanistan':
 			return Promise.resolve({ data: mockStatistic })
+		
 		case 'https://covid19.mathdro.id/api/countries':
 			return Promise.resolve({ data: { countries: mockCountry } })
+		
 		case 'https://covid19.mathdro.id/api/daily':
 			return Promise.resolve({ data: mockDaily })
+		
 		default:
 			return Promise.reject(new Error('Could not fetch'))
 	}
@@ -47,7 +50,7 @@ describe("InfoContainer", () => {
 		await expect(screen.queryAllByText(/3 ноября 2021/)).toBeTruthy();
 		await expect(screen.queryByText("Afghanistan")).toBeTruthy();
 		await expect(container.getElementsByClassName('chartjs-render-monitor').length).toBeDefined();
-
+		
 		expect(container.firstChild).toMatchSnapshot();
 	})
 	

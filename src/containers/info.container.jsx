@@ -1,27 +1,29 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { fetchStatisticData } from "../api";
 import { Info, Chart, Countries, Spinner } from '../components';
+import useLocalStorageSetting from "../hooks/useLocalStorageSetting.container";
 
 
 const InfoContainer = () => {
+	const [ localSetting, setLocalSetting ] = useLocalStorageSetting({});
 	const [ data, setData ] = useState({});
-	const [ country, setCountry ] = useState('');
+	const [ country, setCountry ] = useState(localSetting.country || "");
+
 	
 	useEffect(() => {
-		const fetchAPI = async () => {
-			const dataFetch = await fetchStatisticData();
+		const fetchAPI = async (countryName) => {
+			const dataFetch = await fetchStatisticData(countryName);
 
 			setData(dataFetch);
 		};
 		
-		fetchAPI();
-	}, []);
+		fetchAPI(country);
+	}, [ country ]);
 	
-	const handleCountryChange = async (event) => {
+	const handleCountryChange = (event) => {
 		const country = event.target.value;
-		const data = await fetchStatisticData(country);
 		
-		setData(data);
+		setLocalSetting({ country: country })
 		setCountry(country);
 	};
 	
@@ -30,7 +32,7 @@ const InfoContainer = () => {
 	return (
 		<Fragment>
 			<Info data={ data }/>
-			<Countries handleCountryChange={ handleCountryChange }/>
+			<Countries countryValue={ country } handleCountryChange={ handleCountryChange }/>
 			<Chart data={ data } country={ country } />
 		</Fragment>
 	)

@@ -13,7 +13,7 @@ const SettingsContainer = ({ onToggleUpdate }) => {
 			languageToggle(localSetting.language);
 			themeToggle(localSetting.theme);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ localSetting ]);
+	}, []);
 	
 	const languageToggle = (language) => {
 		i18next.init({
@@ -45,8 +45,10 @@ const SettingsContainer = ({ onToggleUpdate }) => {
 		const language = event.target.value;
 		
 		setLocalSetting({ language: language });
-		onToggleUpdate();
+		
 		languageToggle(language);
+		
+		onToggleUpdate();
 	};
 	
 	const handleThemeChange = (event) => {

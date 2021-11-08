@@ -5,11 +5,11 @@ import { InfoContainer, SettingsContainer } from "../containers";
 
 
 const App = () => {
-	const [ dataUpdate, useDataUpdate ] = useState(false)
+	const [ updatePage, useUpdatePage ] = useState(false)
 	
 	const handleToggleUpdate = () => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
-		useDataUpdate(!dataUpdate);
+		useUpdatePage(!updatePage);
 	}
 	
 	return (
