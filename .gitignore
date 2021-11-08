@@ -6,5 +6,8 @@
 # production
 /build
 
+# test coverage
+/coverage
+
 npm-debug.log*
 todo.txt

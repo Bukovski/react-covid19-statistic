@@ -77,7 +77,16 @@ describe("Settings", () => {
 			
 			userEvent.selectOptions(getByRole('combobox'), "light");
 			
-			expect(handleTheme).toHaveBeenCalledTimes(1);
+			expect(handleTheme).toHaveBeenCalled();
 		})
+	})
+	
+	it("snapshot of the entire component", () => {
+		const { container } = render(<Settings>
+			<Settings.Language language="en"/>
+			<Settings.Theme theme="dark"/>
+		</Settings>);
+		
+		expect(container.firstChild).toMatchSnapshot();
 	})
 })

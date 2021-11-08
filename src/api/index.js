@@ -3,7 +3,7 @@ import axios from 'axios';
 export const _apiBase = process.env.REACT_APP_API_ADDRESS || "https://covid19.mathdro.id/api";
 
 
-export const fetchStatisticData = async (country) => {
+export const fetchStatisticData = async (country = "") => {
 	let changeableUrl = _apiBase;
 	
 	if (country) {

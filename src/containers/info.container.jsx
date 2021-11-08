@@ -10,7 +10,7 @@ const InfoContainer = () => {
 	useEffect(() => {
 		const fetchAPI = async () => {
 			const dataFetch = await fetchStatisticData();
-			
+
 			setData(dataFetch);
 		};
 		
