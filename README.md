@@ -1,5 +1,6 @@
 ## React COVID-19 statistic
 
+[![Coverage Status](https://coveralls.io/repos/github/Bukovski/react-covid19-statistic/badge.svg?branch=master)](https://coveralls.io/github/Bukovski/react-covid19-statistic?branch=master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,8 +8,8 @@ This project is made on React. Displays disease statistics from COVID-19 in grap
 
 ### Install
 
-* To start a project, you must set up all npm dependent commands.
-> npm install
+`npm install` To start a project, you must set up all npm dependent commands.
+
 
 
 
@@ -23,8 +24,8 @@ This project is made on React. Displays disease statistics from COVID-19 in grap
 
 ### Available Scripts
 
-In the project directory, you can run:
-> `npm run start`
+* `npm run start` - start project
+* `npm run test` - test running
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -41,6 +42,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [kapwing.com/404](https://www.kapwing.com/404-illustrations?ref=producthunt) - error page example
 * [i18next](https://www.i18next.com/) - internationalization
 * [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) - mock canvas when run unit test cases with jest.
+* [coveralls](https://github.com/nickmerwin/node-coveralls) - coverage reporting of [coveralls.io](https://coveralls.io/) and add a cool coverage button
 
 ![global-schedule](./screenshots/1.global-schedule-en.jpg)
 ![russian-schedule](./screenshots/2.russian-schedule-en.jpg)
